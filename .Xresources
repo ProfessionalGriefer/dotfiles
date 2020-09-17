@@ -1,0 +1,87 @@
+URxvt.font: xft:monospace:size=10
+URxvt.scrollBar: false
+
+!! Background color
+!URxvt*background: black
+!
+!! Font color
+!URxvt*foreground: white
+!
+!! Other colors
+!URxvt*color0: black
+!URxvt*color1: red3
+!URxvt*color2: green3
+!URxvt*color3: yellow3
+!URxvt*color4: blue2
+!URxvt*color5: magenta3
+!URxvt*color6: cyan3
+!URxvt*color7: gray90
+!URxvt*color8: grey50
+!URxvt*color9: red
+!URxvt*color10: green
+!URxvt*color11: yellow
+!URxvt*color12: blue
+!URxvt*color13: cyan
+!URxvt*color14: white
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
+
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: fullscreen, keyboard-select, resize-font, tabbedex
+
+URxvt.keysym.F11: perl:fullscreen:switch
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+URxvt.keysym.C-minus: resize-font:smaller
+URxvt.keysym.C-plus: resize-font:bigger
+URxvt.keysym.C-equal: resize-font:reset
+URxvt.keysym.C-question: resize-font:show
+URxvt.resize-font.step: 2
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+
+
