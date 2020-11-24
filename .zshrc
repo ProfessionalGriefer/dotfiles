@@ -122,3 +122,14 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Bare Git Repository for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+
+# Disable % signs 
+unsetopt PROMPT_CR
+unsetopt PROMPT_SP
+export PROMPT_EOL_MARK=""
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/home/vincent/.cargo/bin:$PATH"
