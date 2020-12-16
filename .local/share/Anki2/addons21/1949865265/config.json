@@ -1,0 +1,7 @@
+{
+	"max_ivl": 364,
+	"min_revs": 30,
+	"hide_learn": false,
+	"hide_review_day": false,
+	"hide_review_week": false
+}

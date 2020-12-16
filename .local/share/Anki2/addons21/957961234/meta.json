@@ -1,0 +1,1 @@
+{"conflicts": [], "name": "Straight Reward", "mod": 1605141050, "min_point_version": 34, "max_point_version": 35, "branch_index": 4, "config": {"settings": {"1": [{"baseEase": 15, "deckConfName": "Default", "enableNotifications": true, "startEase": 130, "stepEase": 5, "stopEase": 235, "straightLength": 0}]}}, "disabled": false}

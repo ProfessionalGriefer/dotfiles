@@ -1,0 +1,14 @@
+2020-12-16 17:02:55,094 - 1214357311 - checkConfigAndLoad:93 - DEBUG - loading config.pickle...
+2020-12-16 17:02:55,094 - 1214357311 - checkConfigAndLoad:96 - DEBUG - loaded config: {'isUpScalingDisabled': True, 'auto': False, 'keys': {'Ctrl': True, 'Alt': True, 'Shift': False, 'Extra': 'V'}, 'width': '450', 'height': '600', 'ratioKeep': 'width', 'scalingMode': 'smooth'}
+2020-12-16 17:02:55,095 - 1214357311 - __init__:77 - DEBUG - Setup init completed
+2020-12-16 17:02:55,166 - urllib3.connectionpool - _make_request:428 - DEBUG - https://ankiweb.net:443 "POST /update/desktop HTTP/1.1" 200 57
+2020-12-16 17:03:18,128 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.abbr.AbbrExtension".
+2020-12-16 17:03:18,128 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.codehilite.CodeHiliteExtension".
+2020-12-16 17:03:18,128 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.def_list.DefListExtension".
+2020-12-16 17:03:18,128 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.fenced_code.FencedCodeExtension".
+2020-12-16 17:03:18,128 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.footnotes.FootnoteExtension".
+2020-12-16 17:03:34,301 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.abbr.AbbrExtension".
+2020-12-16 17:03:34,301 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.codehilite.CodeHiliteExtension".
+2020-12-16 17:03:34,301 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.def_list.DefListExtension".
+2020-12-16 17:03:34,301 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.fenced_code.FencedCodeExtension".
+2020-12-16 17:03:34,302 - MARKDOWN - registerExtensions:188 - DEBUG - Successfully loaded extension "1030875226.markdown.extensions.footnotes.FootnoteExtension".
