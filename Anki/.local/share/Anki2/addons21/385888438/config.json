@@ -1,0 +1,29 @@
+{
+  "ctrl_click":false,
+  "outline": true,
+  "process_paste": true,
+  "remove_span": false,
+  "tag": "div",
+  "undo": true,
+  "resize_image_default_state": true,
+  "resize_image_preserve_ratio": 2,
+  "z_special_formatting":{
+    "fontcolor": [true, "#00f"],
+    "formatblock": [false,"pre"],
+    "highlight": [false,"#00f"],
+    "hyperlink": false,
+    "indent": false,
+    "justifyCenter": false,
+    "justifyFull": false,
+    "justifyLeft": false,
+    "justifyRight": false,
+    "orderedlist": false,
+    "outdent": false,
+    "removeformat": true,
+    "strikethrough": true,
+    "subscript": false,
+    "superscript": false,
+    "unhyperlink": false,
+    "unorderedlist": false
+  }
+}
