@@ -91,9 +91,9 @@ set expandtab
 " Colemak to Qwerty
 " set langmap=dg,ek,fe,gt,il,jy,kn,lu,nj,pr,rs,sd,tf,ui,yo,o\\;,DG,EK,FE,GT,IL,JY,KN,LU,NJ,PR,RS,SD,TF,UI,YO,O\\:,\\;p,\\:P
 
-packadd! dracula
-syntax enable
-colorscheme dracula
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
 
 set background=dark
 set t_Co=256
