@@ -80,6 +80,8 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  npm
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -97,6 +99,9 @@ export LANG=en_US.UTF-8
  else
    export EDITOR='vim'
  fi
+
+ # Sudo Editor
+ export SUDO_EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,3 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="/home/vincent/.cargo/bin:$PATH"
+
+# Enable vi mode
+# bindkey -v

@@ -58,5 +58,5 @@ fi
 #picom -f &
 #sxhkd &
 #exec bspwm
-exec xmonad
+#exec xmonad
 
