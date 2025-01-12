@@ -1,6 +1,0 @@
-configuration {
-    modi: "window,ssh,drun,combi";
-    combi-modi: "window,drun,ssh";
-    show-icons: true;
-}
-@import "/usr/share/rofi/themes/Arc-Dark.rasi"
