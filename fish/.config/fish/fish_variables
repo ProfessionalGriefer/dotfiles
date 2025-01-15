@@ -1,5 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export FZF_ALT_C_COMMAND:fd\x20\x2d\x2dtype\x3dd\x20\x2d\x2dhidden\x20\x2d\x2dstrip\x2dcwd\x2dprefix\x20\x2d\x2dexclude\x20\x2egit
+SETUVAR --export FZF_CTRL_T_COMMAND:fd\x20\x2d\x2dhidden\x20\x2d\x2dstrip\x2dcwd\x2dprefix\x20\x2d\x2dexclude\x20\x2egit
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dhidden\x20\x2d\x2dstrip\x2dcwd\x2dprefix\x20\x2d\x2dexclude\x20\x2egit
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr

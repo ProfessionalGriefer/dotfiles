@@ -14,8 +14,6 @@ end
 
 oh-my-posh init fish | source
 
-
-
 # pnpm
 set -gx PNPM_HOME /Users/vincent/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
@@ -26,4 +24,7 @@ end
 # Created by `pipx` on 2024-12-10 23:19:10
 set PATH $PATH /Users/vincent/.local/bin
 
+
 fzf --fish | source
+
+zoxide init fish | source
