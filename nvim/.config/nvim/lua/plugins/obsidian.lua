@@ -94,6 +94,19 @@ return {
         desc = "Follow links within vault",
       },
       {
+        "<leader>ch",
+        function()
+          obsidian.util.toggle_checkbox()
+        end,
+        desc = "Toggle checkbox",
+      },
+      {
+        "<leader>ox",
+        ":<C-u>ObsidianExtractNote<CR>",
+        desc = "Extract selection into new note",
+        mode = "v",
+      },
+      {
         "<leader>od",
         "<CMD>ObsidianDailies<CR>",
         desc = "Show all daily notes",
