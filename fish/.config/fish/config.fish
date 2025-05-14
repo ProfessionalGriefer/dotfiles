@@ -1,4 +1,3 @@
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /Users/vincent/miniconda3/bin/conda
@@ -24,9 +23,10 @@ end
 # Created by `pipx` on 2024-12-10 23:19:10
 set PATH $PATH /Users/vincent/.local/bin
 
-
 fzf --fish | source
 
 zoxide init fish | source
 
 fnm env --use-on-cd --shell fish | source
+alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
+pyenv init - fish | source
