@@ -1,0 +1,10 @@
+% python, poetry
+
+# Poetry start FastAPI server
+poetry run uvicorn src.main:app --reload
+
+# Poetry export to requirements.txt
+poetry export -f requirements.txt -o requirements.txt --without-hashes
+
+# Ty, Check types
+# uv tool run ty check

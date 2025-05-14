@@ -1,0 +1,13 @@
+% pnpm, node
+
+# shadcn init
+pnpm dlx shadcn@latest init
+
+# shadcn add component
+pnpm dlx shadcn@latest add <component>
+
+# NextJS init
+pnpm dlx create-next-app@latest
+
+
+$ component: echo -e 'accordion\nalert\nalert-dialog\naspect-ratio\navatar\nbadge\nbreadcrumb\nbutton\ncalendar\ncard\ncarousel\ncheckbox\ncollapsible\ncombobox\ncommand\ncontext-menu\ndata-table\ndate-picker\ndialog\ndrawer\ndropdown-menu\nform\nhover-card\ninput\nlabel\nmenubar\nnavigation-menu\npagination\npopover\nprogress\nradio-group\nresizable\nscroll-area\nselect\nseparator\nsheet\nskeleton\nslider\nsonner\nswitch\ntable\ntabs\ntextarea\ntoast\ntoggle\ntoggle-group\ntooltip\n'

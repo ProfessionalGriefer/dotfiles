@@ -1,0 +1,4 @@
+% ngrok
+
+# Run ngrok on the persistent URL
+ngrok http --url=badly-crack-jennet.ngrok-free.app 8000
