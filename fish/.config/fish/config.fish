@@ -30,3 +30,4 @@ zoxide init fish | source
 fnm env --use-on-cd --shell fish | source
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 pyenv init - fish | source
+set -gx PATH /opt/homebrew/opt/postgresql@17/bin $PATH

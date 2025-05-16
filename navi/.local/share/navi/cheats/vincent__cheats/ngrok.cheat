@@ -1,4 +1,6 @@
 % ngrok
 
 # Run ngrok on the persistent URL
-ngrok http --url=badly-crack-jennet.ngrok-free.app 8000
+ngrok http --url=<PERSISTENT_URL> 8000
+
+$ PERSISTENT_URL : echo "badly-crack-jennet.ngrok-free.app"

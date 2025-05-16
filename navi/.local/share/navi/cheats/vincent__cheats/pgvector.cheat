@@ -1,0 +1,42 @@
+% db, postgresql, pgvector
+
+# Run pgai Vectorizer worker
+uv tool run --env-file .env pgai vectorizer worker -d "postgresql://<DB_USER>@localhost:5432/<DB_NAME>"
+
+# Install pgai into database
+uv tool run pgai install -d "postgresql://<DB_USER>@localhost:5432/<DB_NAME>"
+
+# Postgres copy CSV file into table
+COPY <TABLE> FROM <CSV_FILE> DELIMITER ',' CSV HEADER ENCODING 'UTF8';
+
+# pgai create vectorizer
+```sql
+SELECT ai.create_vectorizer(
+    '<TABLE>'::regclass,
+    loading => ai.loading_column(column_name=>'<COLUMN>'),
+    destination => ai.destination_table(target_table=>'<DESTINATION>'),
+    embedding => ai.embedding_voyageai(
+      'voyage-3-large',
+      1024,
+      api_key_name => 'VOYAGE_API_KEY'
+    )
+);
+```
+; default name
+$ DESTINATION : echo -e "embedding"
+
+# pgai remove vectorizer
+SELECT ai.drop_vectorizer('public_embedding');
+
+# pgvectorscale create index
+CREATE INDEX ON <TABLE> USING diskann (embedding vector_cosine_ops, labels);
+
+$ DB_NAME : psql -d postgres -t -A -c "SELECT datname FROM pg_database WHERE datistemplate = false ORDER BY datname;"
+$ DB_USER : psql -t -A -c "SELECT rolname FROM pg_roles WHERE rolcanlogin = true ORDER BY rolname;"
+
+$ TABLE : psql  -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;" -t -A
+$ COLUMN : psql -c "SELECT table_name || '.' || column_name FROM information_schema.columns WHERE table_schema = 'public' ORDER BY table_name, ordinal_position;"
+
+
+
+
