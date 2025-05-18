@@ -29,7 +29,7 @@ $ DESTINATION : echo -e "embedding"
 SELECT ai.drop_vectorizer('public_embedding');
 
 # pgvectorscale create index
-CREATE INDEX ON <TABLE> USING diskann (embedding vector_cosine_ops, labels);
+CREATE INDEX ON <TABLE> USING diskann (embedding vector_cosine_ops);
 
 $ DB_NAME : psql -d postgres -t -A -c "SELECT datname FROM pg_database WHERE datistemplate = false ORDER BY datname;"
 $ DB_USER : psql -t -A -c "SELECT rolname FROM pg_roles WHERE rolcanlogin = true ORDER BY rolname;"

@@ -31,3 +31,8 @@ fnm env --use-on-cd --shell fish | source
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 pyenv init - fish | source
 set -gx PATH /opt/homebrew/opt/postgresql@17/bin $PATH
+
+# Load secrets
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
