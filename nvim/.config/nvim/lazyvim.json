@@ -4,6 +4,7 @@
     "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.ui.smear-cursor",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
