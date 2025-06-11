@@ -1,0 +1,4 @@
+% tmux
+
+# Reload Config
+tmux source ~/.config/tmux/tmux.conf

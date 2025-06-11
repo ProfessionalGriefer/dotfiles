@@ -1,0 +1,7 @@
+% db, supabase
+
+# Downloads supabase storage folder
+supabase storage cp --experimental --debug --recursive ss://<SRC> <DST>
+
+$ SRC : supabase storage ls --experimental
+
