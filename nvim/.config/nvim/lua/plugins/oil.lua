@@ -214,6 +214,7 @@ return {
   keys = function()
     return {
       { "-", "<CMD>Oil --float<CR>", desc = "Open parent directory" },
+      { "_", "<CMD>Oil --float .<CR>", desc = "Open parent directory" },
     }
   end,
 }

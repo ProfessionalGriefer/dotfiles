@@ -46,3 +46,6 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+# Atuin
+atuin init fish | source
