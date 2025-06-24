@@ -39,3 +39,14 @@ Run the following command to get started:
 stow -t ~ /*
 ```
 
+## Tiling Window Manager
+```sh
+brew install --cask nikitabobko/tap/aerospace                                                            in fish at 00:09:01
+
+# Sketchybar
+brew install font-hack-nerd-font                                                                         in fish at 00:09:01
+
+# Borders
+brew tap FelixKratz/formulae                                                                             in fish at 00:09:01
+brew install borders
+```
