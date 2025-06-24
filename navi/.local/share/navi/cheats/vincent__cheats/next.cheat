@@ -1,0 +1,5 @@
+% next, js
+
+# Add React Scan (Performance Monitoring)
+<Script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" />
+

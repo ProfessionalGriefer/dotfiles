@@ -49,3 +49,5 @@ end
 
 # Atuin
 atuin init fish | source
+
+fish_add_path /Users/vincent/.spicetify
