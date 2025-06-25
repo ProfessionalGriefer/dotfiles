@@ -1,5 +1,6 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh"
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
 
@@ -12,7 +13,17 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+bar=(
+  height=37
+  blur_radius=30
+  position=top
+  sticky=off
+  padding_left=10
+  padding_right=10
+  color=$BAR_COLOR
+)
+
+sketchybar --bar "${bar[@]}"
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -24,12 +35,16 @@ default=(
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=$WHITE
+  label.color=$WHITE
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=5
+  background.height=24
+
 )
 sketchybar --default "${default[@]}"
 
@@ -39,9 +54,8 @@ sketchybar --default "${default[@]}"
 # to indicate active and available mission control spaces.
 
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid="$(($i+1))"
+for i in "${!SPACE_ICONS[@]}"; do
+  sid="$(($i + 1))"
   space=(
     space="$sid"
     icon="${SPACE_ICONS[i]}"
@@ -62,10 +76,21 @@ done
 # only the properties deviating from the current defaults need to be set
 
 sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
+  --set chevron icon= label.drawing=off \
+  --add item front_app left \
+  --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+  --subscribe front_app front_app_switched
+
+sketchybar --add item media e \
+  --set media label.color=$ACCENT_COLOR \
+  label.max_chars=20 \
+  icon.padding_left=0 \
+  scroll_texts=on \
+  icon=􀑪 \
+  icon.color=$ACCENT_COLOR \
+  background.drawing=off \
+  script="$PLUGIN_DIR/media.sh" \
+  --subscribe media media_change
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -79,13 +104,15 @@ sketchybar --add item chevron left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
-           --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+  --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
+  --add item volume right \
+  --set volume script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change \
+  --add item battery right \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery system_woke power_source_change \
+  --add item cpu right \
+  --set cpu update_freq=2 icon=􀧓 script="$PLUGIN_DIR/cpu.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
