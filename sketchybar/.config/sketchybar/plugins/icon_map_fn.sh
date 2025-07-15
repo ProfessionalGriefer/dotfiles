@@ -2,7 +2,7 @@
 # https://github.com/kvndrsslr/sketchybar-app-font/releases/tag/v2.0.39
 
 ### START-OF-ICON-MAP
-function __icon_map() {
+function icon_map() {
   case "$1" in
   "Live")
     icon_result=":ableton:"

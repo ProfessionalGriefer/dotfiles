@@ -1,0 +1,12 @@
+% CLI
+
+# Remove all image metadata
+exiftool -all= <FILE>
+
+# Show all image metadata
+exiftool <FILES>
+
+# Mirror website 
+wget -mpEk <URL>
+
+$ FILES : ls

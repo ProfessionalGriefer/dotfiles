@@ -1,0 +1,4 @@
+% Nvim, editor
+
+# Start Neovim without configs
+nvim -u none
