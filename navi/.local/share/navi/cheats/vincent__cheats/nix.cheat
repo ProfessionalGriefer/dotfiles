@@ -1,0 +1,7 @@
+% Nix
+
+# Nix install
+sudo darwin-rebuild switch --flake ~/.config/nix
+
+# Nix Update
+nix flake update

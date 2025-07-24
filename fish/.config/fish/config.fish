@@ -1,15 +1,4 @@
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/vincent/miniconda3/bin/conda
-    eval /Users/vincent/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/Users/vincent/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/Users/vincent/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH /Users/vincent/miniconda3/bin $PATH
-    end
-end
-# <<< conda initialize <<<
+set PATH $PATH /run/current-system/sw/bin
 
 oh-my-posh init fish | source
 
@@ -58,3 +47,6 @@ function ff
 end
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+# Set default editor - useful for Yazi
+set -gx EDITOR nvim
