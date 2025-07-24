@@ -56,3 +56,5 @@ fish_add_path /Users/vincent/.spicetify
 function ff
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 end
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"

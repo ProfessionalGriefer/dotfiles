@@ -9,4 +9,10 @@ exiftool <FILES>
 # Mirror website 
 wget -mpEk <URL>
 
+# SSH Connection to Hetzner
+ssh vincent@78.46.212.122
+
+# Generate random string
+openssl rand -base64 36
+
 $ FILES : ls
