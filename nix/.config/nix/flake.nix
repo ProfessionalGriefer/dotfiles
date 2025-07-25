@@ -127,7 +127,9 @@
         NSGlobalDomain."com.apple.trackpad.scaling" = 3.0; # High Trackpad speed
         NSGlobalDomain.AppleEnableSwipeNavigateWithScrolls = false;  # Disable swipe with 2 fingers to navigate back and forth
         NSGlobalDomain.AppleShowAllFiles = true; # Show hidden files
+        NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false; # No period on double space
         dock.autohide = true;
+        dock.launchanim = false;
         finder.AppleShowAllExtensions = true;
         finder.AppleShowAllFiles = true; # Show hidden files
         finder.ShowPathbar = true; # Show breadcrumbs in Finder
