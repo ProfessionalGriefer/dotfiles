@@ -31,7 +31,10 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [ 
+          # vscode
+          docker
           dust
+          exiftool # Metadata info
           eza
           firefox
           fish
@@ -44,14 +47,22 @@
           nerd-fonts.jetbrains-mono
           obsidian
           oh-my-posh
+          pipx
+          pnpm
           pyenv
+          qbittorrent
           ripgrep
+          rustup
           stow
+          tailscale
+          tesseract # OCR package
           yazi
+          zoom-us
           zoxide
       ] ++ lib.optionals pkgs.stdenv.isDarwin [
           mkalias # Create finder aliases
           karabiner-elements # Customize Keyboard
+          raycast
       ];
 
       # programs.tmux = {
@@ -61,17 +72,20 @@
 
       homebrew = {
         enable = true;
+        taps = builtins.attrNames config.nix-homebrew.taps; # Prevents untap on "zap"
         brews = [
           "mas"
           "tmux"
         ];
         casks = [
-          "omnidisksweeper"
           "iina"
+          "mac-mouse-fix"
+          "omnidisksweeper"
         ];
         masApps = {
-          "WhatsApp Messenger" = 310633997;
+          "Telegram" = 747648890;
           "The Unarchiver" = 425424353;
+          "WhatsApp Messenger" = 310633997;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
@@ -110,7 +124,22 @@
 
       # Run `darwin-help` to find available system settings
       system.defaults = {
+        NSGlobalDomain."com.apple.trackpad.scaling" = 3.0; # High Trackpad speed
+        NSGlobalDomain.AppleEnableSwipeNavigateWithScrolls = false;  # Disable swipe with 2 fingers to navigate back and forth
+        NSGlobalDomain.AppleShowAllFiles = true; # Show hidden files
         dock.autohide = true;
+        finder.AppleShowAllExtensions = true;
+        finder.AppleShowAllFiles = true; # Show hidden files
+        finder.ShowPathbar = true; # Show breadcrumbs in Finder
+        finder.ShowStatusBar = true; # Show disk space stats
+        loginwindow.LoginwindowText = "Rise and Grind!";
+        screencapture.location = "~/Pictures/screenshots";
+        screensaver.askForPassword = true;
+        screensaver.askForPasswordDelay = 0;
+      };
+      security.pam.services.sudo_local = {
+        touchIdAuth = true; # Enable TouchID for Sudo
+        reattach = true; # Enable TouchID in Tmux
       };
 
       # Necessary for using flakes on this system.
