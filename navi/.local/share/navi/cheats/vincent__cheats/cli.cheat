@@ -15,4 +15,7 @@ ssh vincent@78.46.212.122
 # Generate random string
 openssl rand -base64 36
 
+# Check the weather
+curl wttr.in
+
 $ FILES : ls

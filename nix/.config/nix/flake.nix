@@ -18,6 +18,9 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    # https://wiki.nixos.org/wiki/Spicetify-Nix
+    # spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, ... }:
@@ -32,19 +35,29 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [ 
           # vscode
+          bat
+          neovide
+          btop
           docker
+          dotnet-sdk
+          duf # Alternative to df
           dust
           exiftool # Metadata info
           eza
+          fastfetch # Better than neofetch
+          fd
           firefox
           fish
           fnm
           fzf
           glow # Render MD on CLI
+          htop
+          hyperfine # Benchmarking
           lazygit
           navi
           neovim
           nerd-fonts.jetbrains-mono
+          ngrok
           obsidian
           oh-my-posh
           pipx
@@ -53,15 +66,17 @@
           qbittorrent
           ripgrep
           rustup
+          scc # Count lines of code
           stow
           tailscale
           tesseract # OCR package
+          web-ext # Web Extension Testing Tool
           yazi
           zoom-us
           zoxide
       ] ++ lib.optionals pkgs.stdenv.isDarwin [
           mkalias # Create finder aliases
-          karabiner-elements # Customize Keyboard
+          # karabiner-elements # Customize Keyboard
           raycast
       ];
 
@@ -78,13 +93,16 @@
           "tmux"
         ];
         casks = [
+          "activitywatch"
           "iina"
           "mac-mouse-fix"
           "omnidisksweeper"
+          "tor-browser"
         ];
         masApps = {
           "Telegram" = 747648890;
           "The Unarchiver" = 425424353;
+          # "Toggl Track" = 1291898086;
           "WhatsApp Messenger" = 310633997;
         };
         onActivation.cleanup = "zap";
@@ -143,6 +161,10 @@
         touchIdAuth = true; # Enable TouchID for Sudo
         reattach = true; # Enable TouchID in Tmux
       };
+      system.keyboard = {
+        remapCapsLockToEscape = true;
+        enableKeyMapping = true;
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -194,6 +216,7 @@
 
           };
         }
+        # inputs.spicetify-nix.nixosModules.default
       ];
     };
   };

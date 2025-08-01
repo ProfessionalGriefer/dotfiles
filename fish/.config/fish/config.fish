@@ -46,7 +46,13 @@ function ff
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 end
 
+function v
+    nvim
+end
+
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Set default editor - useful for Yazi
 set -gx EDITOR nvim
+
+set -Ux PATH $PATH /Users/vincent/.dotnet/tools
