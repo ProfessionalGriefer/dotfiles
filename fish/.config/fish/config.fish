@@ -56,3 +56,5 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 set -gx EDITOR nvim
 
 set -Ux PATH $PATH /Users/vincent/.dotnet/tools
+
+set PATH $PATH ~/Downloads/platform-tools

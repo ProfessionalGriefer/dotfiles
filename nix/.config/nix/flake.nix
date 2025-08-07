@@ -34,27 +34,28 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [ 
+          # jdk
+          # tailscale # Also available via AppStore
           # vscode
           bat
-          neovide
           btop
           docker
           dotnet-sdk
           duf # Alternative to df
-          dust
+          dust # Check disk size
           exiftool # Metadata info
-          eza
+          eza # Better ls
           fastfetch # Better than neofetch
           fd
           firefox
           fish
-          fnm
-          fzf
+          fnm # Fast Node Manager
+          fzf # Fuzzyfinder
           glow # Render MD on CLI
           htop
           hyperfine # Benchmarking
           lazygit
-          navi
+          navi # CLI Cheatsheets
           neovim
           nerd-fonts.jetbrains-mono
           ngrok
@@ -68,15 +69,15 @@
           rustup
           scc # Count lines of code
           stow
-          tailscale
+          supabase-cli
           tesseract # OCR package
           web-ext # Web Extension Testing Tool
-          yazi
+          yazi # CLI File Manager
           zoom-us
-          zoxide
+          zoxide # Better cd
       ] ++ lib.optionals pkgs.stdenv.isDarwin [
           mkalias # Create finder aliases
-          # karabiner-elements # Customize Keyboard
+          karabiner-elements # Customize Keyboard
           raycast
       ];
 
@@ -89,21 +90,29 @@
         enable = true;
         taps = builtins.attrNames config.nix-homebrew.taps; # Prevents untap on "zap"
         brews = [
-          "mas"
+          "mas" # Search Mac Apps over CLI
           "tmux"
         ];
         casks = [
           "activitywatch"
-          "iina"
-          "mac-mouse-fix"
+          "iina" # Better video player
+          "jordanbaird-ice" # Clean up menu bar 
+          "lulu" # Firewall
+          "mac-mouse-fix" # Mouse scroll smoothing
+          "minecraft"
+          "minecraft-server"
           "omnidisksweeper"
+          "pearcleaner" # Clean up Install remnants
+          "temurin" # Java for Minecraft-server
           "tor-browser"
         ];
         masApps = {
+          "LocalSend" = 1661733229;
+          "NextDNS" = 1464122853;
+          "TailScale" = 1475387142;
           "Telegram" = 747648890;
-          "The Unarchiver" = 425424353;
-          # "Toggl Track" = 1291898086;
           "WhatsApp Messenger" = 310633997;
+          # "Toggl Track" = 1291898086;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
@@ -164,6 +173,10 @@
       system.keyboard = {
         remapCapsLockToEscape = true;
         enableKeyMapping = true;
+      };
+      networking.applicationFirewall = {
+        enable = true;
+        enableStealthMode = true;
       };
 
       # Necessary for using flakes on this system.
