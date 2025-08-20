@@ -1,6 +1,6 @@
 set PATH $PATH /run/current-system/sw/bin
 
-oh-my-posh init fish | source
+oh-my-posh init fish --config ~/.config/ohmyposh/catppuccin_macchiato.json | source
 
 # pnpm
 set -gx PNPM_HOME /Users/vincent/Library/pnpm

@@ -51,9 +51,13 @@
           fish
           fnm # Fast Node Manager
           fzf # Fuzzyfinder
+          gh # GitHub CLI Tool
+          ghostscript # Requirement for ImageMagick
           glow # Render MD on CLI
+          gnupg # GPG, required for pass
           htop
           hyperfine # Benchmarking
+          imagemagick # For the convert command
           lazygit
           navi # CLI Cheatsheets
           neovim
@@ -61,8 +65,11 @@
           ngrok
           obsidian
           oh-my-posh
+          ollama # Run AI models locally
+          pass # Password-store
           pipx
           pnpm
+          poppler-utils # For pdfunite command
           pyenv
           qbittorrent
           ripgrep
@@ -71,14 +78,17 @@
           stow
           supabase-cli
           tesseract # OCR package
+          thunderbird
           web-ext # Web Extension Testing Tool
           yazi # CLI File Manager
           zoom-us
           zoxide # Better cd
       ] ++ lib.optionals pkgs.stdenv.isDarwin [
-          mkalias # Create finder aliases
+          iina # Better video player
           karabiner-elements # Customize Keyboard
+          mkalias # Create finder aliases
           raycast
+
       ];
 
       # programs.tmux = {
@@ -90,19 +100,22 @@
         enable = true;
         taps = builtins.attrNames config.nix-homebrew.taps; # Prevents untap on "zap"
         brews = [
+          "huggingface-cli"
           "mas" # Search Mac Apps over CLI
           "tmux"
         ];
         casks = [
           "activitywatch"
-          "iina" # Better video player
+          # "adobe-acrobat-reader" # Adobe Acrobat
           "jordanbaird-ice" # Clean up menu bar 
+          "xnviewmp" # Image viewer for TIF files
           "lulu" # Firewall
           "mac-mouse-fix" # Mouse scroll smoothing
           "minecraft"
           "minecraft-server"
           "omnidisksweeper"
           "pearcleaner" # Clean up Install remnants
+          "steam" # Matthias made me addicted again
           "temurin" # Java for Minecraft-server
           "tor-browser"
         ];
@@ -128,6 +141,7 @@
         pkgs.nerd-fonts.jetbrains-mono
       ];
 
+
       # https://gist.github.com/elliottminns/211ef645ebd484eb9a5228570bb60ec3
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
@@ -151,20 +165,35 @@
 
       # Run `darwin-help` to find available system settings
       system.defaults = {
-        NSGlobalDomain."com.apple.trackpad.scaling" = 3.0; # High Trackpad speed
-        NSGlobalDomain.AppleEnableSwipeNavigateWithScrolls = false;  # Disable swipe with 2 fingers to navigate back and forth
-        NSGlobalDomain.AppleShowAllFiles = true; # Show hidden files
-        NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false; # No period on double space
-        dock.autohide = true;
-        dock.launchanim = false;
-        finder.AppleShowAllExtensions = true;
-        finder.AppleShowAllFiles = true; # Show hidden files
-        finder.ShowPathbar = true; # Show breadcrumbs in Finder
-        finder.ShowStatusBar = true; # Show disk space stats
+        WindowManager.StandardHideDesktopIcons = false;
+        NSGlobalDomain = {
+          "com.apple.trackpad.scaling" = 3.0; # High Trackpad speed
+          AppleEnableSwipeNavigateWithScrolls = false;  # Disable swipe with 2 fingers to navigate back and forth
+          AppleShowAllFiles = true; # Show hidden files
+          NSAutomaticPeriodSubstitutionEnabled = false; # No period on double space
+        };
+        dock = {
+          autohide = true;
+          autohide-delay = 0.0;
+          launchanim = false;
+          autohide-time-modifier = 0.5;
+          expose-animation-duration = 0.5;
+        };
+        finder = {
+          AppleShowAllExtensions = true;
+          AppleShowAllFiles = true; # Show hidden files
+          ShowPathbar = true; # Show breadcrumbs in Finder
+          ShowStatusBar = true; # Show disk space stats
+          CreateDesktop = false;
+          ShowExternalHardDrivesOnDesktop = false;
+          ShowRemovableMediaOnDesktop = false;
+        };
         loginwindow.LoginwindowText = "Rise and Grind!";
         screencapture.location = "~/Pictures/screenshots";
-        screensaver.askForPassword = true;
-        screensaver.askForPasswordDelay = 0;
+        screensaver = {
+          askForPassword = true;
+          askForPasswordDelay = 0;
+        };
       };
       security.pam.services.sudo_local = {
         touchIdAuth = true; # Enable TouchID for Sudo

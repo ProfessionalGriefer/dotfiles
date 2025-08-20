@@ -1,5 +1,5 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
@@ -45,8 +45,6 @@ return {
 
     preferred_link_style = "wiki",
 
-    open_app_foreground = true,
-
     disable_frontmatter = true,
 
     templates = {
@@ -80,12 +78,17 @@ return {
     attachments = {
       img_folder = "7 - Files",
     },
+
+    checkbox = {
+      create_new = false,
+    },
   },
 
   keys = function()
     local obsidian = require("obsidian")
 
     return {
+      -- Smart action depending on context, either follow link or toggle checkbox.
       {
         "gf",
         function()
@@ -108,7 +111,7 @@ return {
       },
       {
         "<leader>od",
-        "<CMD>ObsidianDailies<CR>",
+        "<CMD>ObsidianDailies -1000 1<CR>",
         desc = "Show all daily notes",
       },
       {

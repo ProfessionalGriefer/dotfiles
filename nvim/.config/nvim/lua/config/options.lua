@@ -3,3 +3,6 @@
 -- Add any additional options here
 
 vim.opt.spelllang = "en,de"
+
+-- vim.lsp.enable("ty")
+vim.lsp.enable("pyrefly")
